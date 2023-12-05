@@ -78,13 +78,7 @@
 
 </head>
 <header>
-    <div class="page-header">
-        {% if msg_sent: %}
-          <h1>Successfully sent your message</h1>
-          {% else: %}
-          <h1>Contact Me</h1>
-          {% endif %}
-    </div>
+
 </header>
 <body>
 <div id="fh5co-wrapper">
@@ -146,8 +140,12 @@
                 <div class="row">
                     <div class="col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
                         <div class="fh5co-intro fh5co-table-cell">
-                            <h1 class="text-center">Contact Us</h1>
-                            <p>Made with love by the fine folks at <a href="http://freehtml5.co">FreeHTML5.co</a></p>
+                            {% if msg_sent: %}
+          <h1>Il messaggio è stato inviato</h1>
+                            <p>verrà ricontattato a breve.</p>
+          {% else: %}
+          <h1>Contattaci</h1>
+          {% endif %}
                         </div>
                     </div>
                 </div>
@@ -179,22 +177,22 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="nome">
-                                            <input type="text" class="form-control" placeholder="Name" id="nome">
+                                            <input type="text" class="form-control" placeholder="Name" id="nome" name="nome">
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="Email">
-                                            <input type="text" class="form-control" placeholder="Email">
+                                        <label for="emaill">
+                                            <input type="text" class="form-control" placeholder="Email" id="emaill" name="emaill">
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="message"><textarea name="message" class="form-control" id="textarea"
+                                        <label for="messaggio"><textarea name="messaggio" class="form-control" id="messaggio"
                                                                         cols="30" rows="7"
-                                                                        placeholder="Message"></textarea></label>
+                                                                        placeholder="Messaggio"></textarea></label>
                                     </div>
                                 </div>
                                 <div class="col-md-12">

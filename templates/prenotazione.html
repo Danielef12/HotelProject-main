@@ -66,10 +66,10 @@
 	<link rel="stylesheet" href="static/assets/css/style.css">
 
 	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script src="static/assets/js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
+	<script src="static/assets/js/respond.min.js"></script>
 	<![endif]-->
 
 </head>
@@ -105,7 +105,7 @@
 								</ul>
 							</li>
 							<li><a href="services.html">Services</a></li>
-							<li><a class="active" href="blog.html">Blog</a></li>
+							<li><a class="active" href="prenotazione.html">Prenota</a></li>
 							<li><a href="contact.html">Contact</a></li>
 						</ul>
 					</nav>
@@ -121,87 +121,41 @@
 			<div class="row">
 				<div class="col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
 					<div class="fh5co-intro fh5co-table-cell">
-						<h1 class="text-center">Read Our Blog</h1>
-						<p>Made with love by the fine folks at <a href="http://freehtml5.co">FreeHTML5.co</a></p>
+						<h1 class="text-center">Prenota la tua Stanza</h1>
+						<p>Curate per voi in ogni dettaglio</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-
-	<div id="fh5co-blog-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4">
-					<div class="blog-grid" style="background-image: url(images/image-1.jpg);">
-						<div class="date text-center">
-							<span>09</span>
-							<small>Aug</small>
-						</div>
-					</div>
-					<div class="desc">
-						<h3><a href="#">Most Expensive Hotel</a></h3>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="blog-grid" style="background-image: url(images/image-2.jpg);">
-						<div class="date text-center">
-							<span>09</span>
-							<small>Aug</small>
-						</div>
-					</div>
-					<div class="desc">
-						<h3><a href="#">1st Anniversary of Luxe Hotel</a></h3>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="blog-grid" style="background-image: url(images/image-3.jpg);">
-						<div class="date text-center">
-							<span>09</span>
-							<small>Aug</small>
-						</div>
-					</div>
-					<div class="desc">
-						<h3><a href="#">Discover New Adventure</a></h3>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="blog-grid" style="background-image: url(images/image-4.jpg);">
-						<div class="date text-center">
-							<span>09</span>
-							<small>Aug</small>
-						</div>
-					</div>
-					<div class="desc">
-						<h3><a href="#">Most Expensive Hotel</a></h3>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="blog-grid" style="background-image: url(images/image-5.jpg);">
-						<div class="date text-center">
-							<span>09</span>
-							<small>Aug</small>
-						</div>
-					</div>
-					<div class="desc">
-						<h3><a href="#">1st Anniversary of Luxe Hotel</a></h3>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="blog-grid" style="background-image: url(images/image-6.jpg);">
-						<div class="date text-center">
-							<span>09</span>
-							<small>Aug</small>
-						</div>
-					</div>
-					<div class="desc">
-						<h3><a href="#">Discover New Adventure</a></h3>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<div class="container mt-5">
+    <h2>Prenota Camera</h2>
+    <form action="/prenota" method="POST">
+      <div class="mb-3">
+        <label for="room-type" class="form-label">Seleziona la stanza</label>
+        <select class="form-select" id="room-type" name="room-type" required>
+          <option value="" selected disabled>Seleziona la stanza</option>
+          <option value="singola">Singola</option>
+          <option value="doppia">Doppia</option>
+          <option value="tripla">Tripla</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="arrival-date" class="form-label">Data di Arrivo</label>
+        <input type="date" class="form-control" id="arrival-date" name="arrival-date" required>
+      </div>
+      <div class="mb-3">
+        <label for="departure-date" class="form-label">Data di Partenza</label>
+        <input type="date" class="form-control" id="departure-date" name="departure-date" required>
+      </div>
+      <div class="mb-3">
+        <label for="username" class="form-label">Nome:</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Inserisci il tuo nome" required>
+      </div>
+      <input type="submit" class="btn btn-primary" value="Prenota">
+    </form>
+  </div>
 
 	<footer id="footer" class="fh5co-bg-color">
 		<div class="container">
@@ -265,31 +219,31 @@
 
 	</div>
 	<!-- END fh5co-wrapper -->
-	
 	<!-- Javascripts -->
-	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="static/assets/js/jquery-2.1.4.min.js"></script>
 	<!-- Dropdown Menu -->
-	<script src="js/hoverIntent.js"></script>
-	<script src="js/superfish.js"></script>
+	<script src="static/assets/js/hoverIntent.js"></script>
+	<script src="static/assets/js/superfish.js"></script>
 	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
+	<script src="static/assets/js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="static/assets/js/jquery.waypoints.min.js"></script>
 	<!-- Counters -->
-	<script src="js/jquery.countTo.js"></script>
+	<script src="static/assets/js/jquery.countTo.js"></script>
 	<!-- Stellar Parallax -->
-	<script src="js/jquery.stellar.min.js"></script>
+	<script src="static/assets/js/jquery.stellar.min.js"></script>
 	<!-- Owl Slider -->
-	<!-- // <script src="js/owl.carousel.min.js"></script> -->
+	<!-- // <script src="static/assets/js/owl.carousel.min.js"></script> -->
 	<!-- Date Picker -->
-	<script src="js/bootstrap-datepicker.min.js"></script>
+	<script src="static/assets/js/bootstrap-datepicker.min.js"></script>
 	<!-- CS Select -->
-	<script src="js/classie.js"></script>
-	<script src="js/selectFx.js"></script>
+	<script src="static/assets/js/classie.js"></script>
+	<script src="static/assets/js/selectFx.js"></script>
 	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
+	<script src="static/assets/js/jquery.flexslider-min.js"></script>
 
-	<script src="js/custom.js"></script>
+	<script src="static/assets/js/custom.js"></script>
+
 
 </body>
 </html>
