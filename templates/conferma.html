@@ -146,8 +146,8 @@
         <h2>Recap Prenotazione:</h2>
         <p><strong>Username:</strong> {{ prenotazione.username }}</p>
         <p><strong>Tipo di Camera:</strong> {{ prenotazione.room_type }}</p>
-        <p><strong>Data di Arrivo:</strong> {{ prenotazione.arrival_date.strftime('%Y-%m-%d') }}</p>
-        <p><strong>Data di Partenza:</strong> {{ prenotazione.departure_date.strftime('%Y-%m-%d') }}</p>
+        <p><strong>Data di Arrivo:</strong> {{ prenotazione.arrival_date.strftime('%d-%m-%Y') }}</p>
+        <p><strong>Data di Partenza:</strong> {{ prenotazione.departure_date.strftime('%d-%m-%Y') }}</p>
         <!-- Aggiungi altri dettagli della prenotazione secondo le tue esigenze -->
     {% else %}
         <p>Nessuna prenotazione trovata.</p>
