@@ -77,9 +77,6 @@
     <![endif]-->
 
 </head>
-<header>
-
-</header>
 <body>
 <div id="fh5co-wrapper">
     <div id="fh5co-page">
@@ -94,10 +91,9 @@
                                 <li><a href="index.html">Home</a></li>
 
                                 <li><a href="services.html">Servizi</a></li>
-                                <li><a href="prenotazione.html">Prenota</a></li>
-                                <li><a class="active" href="contact.html">Contatti</a></li>
+                                <li><a class="active" href="prenotazione.html">Prenota</a></li>
+                                <li><a href="contact.html">Contatti</a></li>
                             </ul>
-                        </nav>
                         </nav>
                     </div>
                 </div>
@@ -105,80 +101,60 @@
 
         </div>
         <!-- end:fh5co-header -->
-        <div class="fh5co-parallax" style="background-image: url(static/assets/images/tamas-munkacsi-pnDHV1NBcaA-unsplash.jpg);"
+        <div class="fh5co-parallax"
+             style="background-image: url(static/assets/images/runnyrem-LfqmND-hym8-unsplash.jpg);"
              data-stellar-background-ratio="0.5">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
                         <div class="fh5co-intro fh5co-table-cell">
-                            {% if msg_sent: %}
-          <h1>Il messaggio è stato inviato</h1>
-                            <p>verrà ricontattato a breve.</p>
-          {% else: %}
-          <h1>Contattaci</h1>
-          {% endif %}
+                            <h1 class="text-center">Prenota la tua Stanza</h1>
+                            <p>Curate per voi in ogni dettaglio</p>
+                            {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+                                    <ul class="flashes">
+                                        {% for message in messages %}
+                                            <li>{{ message }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            {% endwith %}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="fh5co-contact-section">
-            <div class="row">
-                <div class="col-md-6">
-                    <div id="map" class="fh5co-map"></div>
+        <div class="container mt-5">
+            <h2>Prenota Camera</h2>
+            <form action="/prenota" method="POST">
+                <div class="mb-3">
+                    <label for="room-type" class="form-label">Seleziona la stanza</label>
+                    <select class="form-select" id="room-type" name="room-type" required>
+                        <option value="" selected disabled>Seleziona la stanza</option>
+                        <option value="singola">Singola</option>
+                        <option value="doppia">Doppia</option>
+                        <option value="tripla">Tripla</option>
+                    </select>
                 </div>
-                <div class="col-md-6">
-                    <div class="col-md-12">
-                        <h3>Our Address</h3>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                            there live the blind texts.</p>
-                        <ul class="contact-info">
-                            <li><i class="ti-map"></i>198 West 21th Street, Suite 721 New York NY 10016</li>
-                            <li><i class="ti-mobile"></i>+ 1235 2355 98</li>
-                            <li><i class="ti-envelope"></i><a href="#">info@yoursite.com</a></li>
-                            <li><i class="ti-home"></i><a href="#">www.yoursite.com</a></li>
-                        </ul>
-                    </div>
-
-
-                    <form id="contactForm" name="sentMessage" action="{{ url_for('contact') }}" method="post">
-                        <div class="col-md-12">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="nome">
-                                            <input type="text" class="form-control" placeholder="Name" id="nome" name="nome">
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="emaill">
-                                            <input type="text" class="form-control" placeholder="Email" id="emaill" name="emaill">
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="messaggio"><textarea name="messaggio" class="form-control" id="messaggio"
-                                                                        cols="30" rows="7"
-                                                                        placeholder="Messaggio"></textarea></label>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="submit" value="Send Message" class="btn btn-primary">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                <div class="mb-3">
+                    <label for="arrival-date" class="form-label">Data di Arrivo</label>
+                    <input type="date" class="form-control" id="arrival-date" name="arrival-date" required>
                 </div>
-            </div>
+                <div class="mb-3">
+                    <label for="departure-date" class="form-label">Data di Partenza</label>
+                    <input type="date" class="form-control" id="departure-date" name="departure-date" required>
+                </div>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Nome:</label>
+                    <input type="text" class="form-control" id="username" name="username"
+                           placeholder="Inserisci il tuo nome" required>
+                </div>
+                <input type="submit" class="btn btn-primary" value="Prenota">
+            </form>
+
         </div>
-
 
         <footer id="footer" class="fh5co-bg-color">
             <div class="container">
@@ -243,7 +219,6 @@
 
 </div>
 <!-- END fh5co-wrapper -->
-
 <!-- Javascripts -->
 <script src="static/assets/js/jquery-2.1.4.min.js"></script>
 <!-- Dropdown Menu -->
@@ -266,11 +241,9 @@
 <script src="static/assets/js/selectFx.js"></script>
 <!-- Flexslider -->
 <script src="static/assets/js/jquery.flexslider-min.js"></script>
-<!-- Google Map -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-<script src="static/assets/js/google_map.js"></script>
 
 <script src="static/assets/js/custom.js"></script>
+
 
 </body>
 </html>
